@@ -28,8 +28,8 @@ fun ScreenOne(navController: NavController, viewModel: AppViewModel) {
         modifier = Modifier.fillMaxSize()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.tu_imagen), // Reemplaza con el nombre de tu imagen
-            contentDescription = "Descripción de la imagen",
+            painter = painterResource(id = R.drawable.dragonball_daima_logo), // Reemplaza con el nombre de tu imagen
+            contentDescription = "Logo",
             modifier = Modifier
                 .clip(RoundedCornerShape(50)) // Ajusta el radio según lo necesites
                 .border(2.dp, Color.Black) // Ajusta el color y el grosor del borde
