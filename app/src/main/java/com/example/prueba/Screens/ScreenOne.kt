@@ -2,90 +2,81 @@ package com.example.prueba.Screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.draw.shadow
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.graphics.Brush
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import com.example.prueba.Navigation.Screen
+import com.example.prueba.Navigation.AppViewModel
 
 @Composable
-fun ScreenOne(navController: NavController) {
-    LaunchedEffect(key1 = true) {
-        delay(2000L)
-        navController.navigate(Screen.Home.route) {
-            popUpTo(Screen.Splash.route) { inclusive = true }
-        }
+fun ScreenOne(navController: NavController, viewModel: AppViewModel) {
+    Box(
+        modifier = Modifier.fillMaxSize()
+    ) {
+        Image(
+            painter = painterResource(id = R.drawable.tu_imagen), // Reemplaza con el nombre de tu imagen
+            contentDescription = "Descripción de la imagen",
+            modifier = Modifier
+                .clip(RoundedCornerShape(50)) // Ajusta el radio según lo necesites
+                .border(2.dp, Color.Black) // Ajusta el color y el grosor del borde
+                .graphicsLayer(alpha = 0.8f) // Ajusta el valor de alpha según lo necesites
+        )
     }
-
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    colors = listOf(
-                        Color.White,
-                        Color.LightGray,
-                        Color.DarkGray
-                    )
-                )
-            )
-            .padding(32.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.Start
     ) {
-        Box(
-            modifier = Modifier
-                .padding(bottom = 24.dp)
-                .fillMaxWidth()
-                .height(200.dp)
-                .clip(RoundedCornerShape(16.dp))
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.logo),
-                contentDescription = "DragonballLogo",
-                modifier = Modifier.fillMaxSize(),
-                contentScale = ContentScale.FillWidth
-            )
-        }
-
         Text(
-            text = "Dragon Ball Daima!",
-            fontSize = 48.sp,
-            fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(bottom = 16.dp)
+            text = viewModel.screenOneTitle,
+            color = Color.Blue,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold
         )
-
+        Spacer(modifier = Modifier.height(8.dp))
         Text(
-            text = "Creado \n por Xavier Moreno",
+            text = viewModel.screenOneSubtitle,
             fontSize = 16.sp,
-            textAlign = TextAlign.Center,
-            modifier = Modifier.padding(bottom = 8.dp)
+            fontWeight = FontWeight.Normal
         )
-
-        Text(
-            text = "La Salle Gràcia",
-            fontSize = 14.sp,
-            fontWeight = FontWeight.Light
-        )
+        Spacer(modifier = Modifier.height(32.dp))
+        Column(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(viewModel.screenOneBody, style = androidx.compose.material3.MaterialTheme.typography.headlineMedium)
+            Spacer(modifier = Modifier.height(16.dp))
+            Button(
+                onClick = { navController.navigate(Screen.ScreenFour.route) },
+                modifier = Modifier
+                    .background(Color.Blue)
+                    .padding(16.dp)
+                    .height(50.dp)
+                    .width(200.dp)
+                    .shadow(4.dp, RoundedCornerShape(12.dp))
+            ) {
+                Text(
+                    text = "Entrar!",
+                    fontWeight = FontWeight.Bold,
+                    color = Color.White
+                )
+            }
+        }
     }
-}
-
-@Preview
-@Composable
-fun SplashScreenPreview() {
-    SplashScreen(navController = NavController(LocalContext.current))
 }
