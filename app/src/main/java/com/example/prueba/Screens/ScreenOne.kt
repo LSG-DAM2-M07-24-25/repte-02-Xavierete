@@ -63,7 +63,7 @@ fun ScreenOne(navController: NavController) {
         }
 
         Text(
-            text = "Dragon Ball Daima",
+            text = "Dragon Ball Daima!",
             fontSize = 48.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 16.dp)
