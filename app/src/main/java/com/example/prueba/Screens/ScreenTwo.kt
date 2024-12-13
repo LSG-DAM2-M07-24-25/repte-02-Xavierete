@@ -14,11 +14,26 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.prueba.Navigation.Screen
 
 @Composable
 fun ScreenTwo(navController: NavController) {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.Start
+    )
+    {
+        Text(
+            text = viewModel.screenOneSubtitle,
+            color = Color.Blue,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold
+    }
     Box(
         modifier = Modifier.fillMaxSize()
     ) {

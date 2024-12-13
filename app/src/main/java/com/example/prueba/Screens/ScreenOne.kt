@@ -42,6 +42,20 @@ fun ScreenOne(navController: NavController, viewModel: AppViewModel) {
             .padding(16.dp),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.Start
+    )
+    {
+        Text(
+            text = viewModel.screenOneTitle,
+            color = Color.Blue,
+            fontSize = 24.sp,
+            fontWeight = FontWeight.Bold
+    }
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.Start
     ) {
         Text(
             text = viewModel.screenOneTitle,
