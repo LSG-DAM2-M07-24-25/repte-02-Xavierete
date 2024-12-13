@@ -1,25 +1,29 @@
 # Repte 02
-Es una aplicación de Android desarrollada en **Kotlin** con **Jetpack Compose**. Donde el usuario puede navegar entre diferentes pantallas y seleccionar al personaje que quiera de entre las 6 imágenes.
+### Xavier Moreno Navarro
+Es una aplicación de Android desarrollada en **Kotlin** con **Jetpack Compose**.
+Donde el usuario puede navegar entre diferentes pantallas y seleccionar al personaje que quiera de entre las 6 imágenes.
 
 ## 📱 Funcionalidad
 
 La app contiene dos pantallas principales:
 
-1. **Screen One**:
+1. **Screen One**: (Página inicial)
 
-La página donde se ve el logo, mi nombre y el botón de continuar.
+La página donde se ve el logo, de forma de presentación.
+También incluye mi nombre y un botón para entrar.
 
 2. **Screen Two**:
 
-La página donde se ve el logo, mi nombre y el botón de continuar.
+El usuario selecciona de entre los 6 personajes y continua.
 
-3. **Screen One**:
+3. **Screen Three**:
 
-La página donde se ve el logo, mi nombre y el botón de continuar.
+El usuario le pone nombre a la imagen seleccionada y un botón para ir a la cuarta página.
 
-4. **Screen One**:
+4. **Screen Four**: (Página de resultado)
 
-La página donde se ve el logo, mi nombre y el botón de continuar.
+Página final con la imagen seleccionada y el título que ha puesto el usuario.
+Tambien incluye un botón para volver a empezar desde la página dos.
 
 ---
 ![Logo](logo.png)
