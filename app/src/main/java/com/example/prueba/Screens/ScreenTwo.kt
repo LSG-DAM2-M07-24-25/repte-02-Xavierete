@@ -28,7 +28,9 @@ fun ScreenTwo(navController: NavController) {
             modifier = Modifier
         )
     }
+
     Spacer(modifier = Modifier.height(8.dp))
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -38,21 +40,20 @@ fun ScreenTwo(navController: NavController) {
     )
 
     {
-        Text("Escoge el personaje que quieras.", style = androidx.compose.material3.MaterialTheme.typography.headlineMedium)
         Spacer(modifier = Modifier.height(16.dp))
         Button(
             onClick = { navController.navigate(Screen.ScreenThree.route) },
             modifier = Modifier
-                .background(Color.Blue)
+                .background(Color.White)
                 .padding(16.dp)
                 .height(50.dp)
                 .width(200.dp)
                 .shadow(4.dp, RoundedCornerShape(12.dp))
         ) {
             Text(
-                text = "Continuar para poner nombre al personaje",
+                text = "Continuar",
                 fontWeight = FontWeight.Bold,
-                color = Color.White
+                color = Color.Black
             )
         }
     }

@@ -28,12 +28,12 @@ fun ScreenOne(navController: NavController, viewModel: AppViewModel) {
         modifier = Modifier.fillMaxSize()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.dragonball_daima_logo), // Reemplaza con el nombre de tu imagen
+            painter = painterResource(id = R.drawable.dragonball_daima_logo),
             contentDescription = "Logo",
             modifier = Modifier
-                .clip(RoundedCornerShape(50)) // Ajusta el radio según lo necesites
-                .border(2.dp, Color.Black) // Ajusta el color y el grosor del borde
-                .graphicsLayer(alpha = 0.8f) // Ajusta el valor de alpha según lo necesites
+                .clip(RoundedCornerShape(50))
+                .border(2.dp, Color.Black)
+                .graphicsLayer(alpha = 0.8f)
         )
     }
     Column(
@@ -65,7 +65,7 @@ fun ScreenOne(navController: NavController, viewModel: AppViewModel) {
             Button(
                 onClick = { navController.navigate(Screen.ScreenFour.route) },
                 modifier = Modifier
-                    .background(Color.Blue)
+                    .background(Color.white)
                     .padding(16.dp)
                     .height(50.dp)
                     .width(200.dp)
@@ -74,7 +74,7 @@ fun ScreenOne(navController: NavController, viewModel: AppViewModel) {
                 Text(
                     text = "Entrar!",
                     fontWeight = FontWeight.Bold,
-                    color = Color.White
+                    color = Color.Black
                 )
             }
         }

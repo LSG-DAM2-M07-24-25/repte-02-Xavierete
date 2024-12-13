@@ -41,16 +41,16 @@ fun ScreenTwo(navController: NavController) {
         Button(
             onClick = { navController.navigate(Screen.ScreenFour.route) },
             modifier = Modifier
-                .background(Color.Blue)
+                .background(Color.White)
                 .padding(16.dp)
                 .height(50.dp)
                 .width(200.dp)
                 .shadow(4.dp, RoundedCornerShape(12.dp))
         ) {
             Text(
-                text = "Mostrar el personaje a gran escala",
+                text = "Mostrar",
                 fontWeight = FontWeight.Bold,
-                color = Color.White
+                color = Color.Black
             )
         }
     }
