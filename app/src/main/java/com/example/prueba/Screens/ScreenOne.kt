@@ -56,7 +56,7 @@ fun ScreenOne(navController: NavController) {
         ) {
             Image(
                 painter = painterResource(id = R.drawable.logo),
-                contentDescription = "Dragonball Logo",
+                contentDescription = "DragonballLogo",
                 modifier = Modifier.fillMaxSize(),
                 contentScale = ContentScale.FillWidth
             )
